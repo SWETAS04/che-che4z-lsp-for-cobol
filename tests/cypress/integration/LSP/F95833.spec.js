@@ -48,7 +48,7 @@ context('This is F95833 spec', () => {
       cy.getCurrentLine().should('not.have.class', IDE.editorError);
       cy.getCurrentLine().type('{selectall}{backspace}');
       cy.getCurrentLine().type(
-        `             EXEC CICS XCTL123 PROGRAM (XCTL1) END-EXEC.              
+        `             EXEC CICS XCTL123 PROGRAM (XCTL1) END-EXEC.
         GOBACK.`,
       );
       cy.goToLine(51);

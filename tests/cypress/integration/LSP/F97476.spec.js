@@ -24,7 +24,7 @@ const IDE = env === 'theia' ? Theia : VSCODE;
 //F97476 - Support for "REPLACING" statement
 
 context('This is a F97476 spec', () => {
-  describe('TC248045 Replacing Basic Scenario', () => {
+  describe.only('TC248045 Replacing Basic Scenario', () => {
     beforeEach(() => {
       cy.updateConfigs('testing');
     });
@@ -38,7 +38,8 @@ context('This is a F97476 spec', () => {
       cy.getLineByNumber(19).contains('COPY REPL.').type('{end}{backspace} REPLACING LEADING ==TAG== BY ==ABC== .', {
         delay: 100,
       });
-
+      // This is a workaround fo CI runs
+      cy.closeCurrentTab().openFile('REPLACING.CBL');
       cy.get(IDE.editorError).should('not.exist');
       cy.getLineByNumber(22).findText('ABC-ID').goToDefinition();
       cy.getCurrentTab().should('have.text', 'REPL');

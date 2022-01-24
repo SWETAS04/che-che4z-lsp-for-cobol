@@ -40,6 +40,7 @@ context('This is F102470 spec', () => {
     });
 
     it(['smoke', 'CI'], 'Go to definition for subroutine', () => {
+      cy.openFile('CALL.cbl').wait(500).closeCurrentTab();
       cy.openFile('CALL.cbl').goToLine(21);
       cy.getLineByNumber(21).findText('SUB1').goToDefinition();
       cy.getCurrentTab().should('contain.text', 'SUB1.cob');

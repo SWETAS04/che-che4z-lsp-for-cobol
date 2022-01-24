@@ -318,9 +318,9 @@ context('This is a LSP spec', () => {
     beforeEach(() => {
       cy.writeFile(
         'test_files/project/CALC-DATA.cbl',
-        `       IDENTIFICATION DIVISION. 
-        PROGRAM-ID. VARS. 
-        DATA DIVISION. 
+        `       IDENTIFICATION DIVISION.
+        PROGRAM-ID. VARS.
+        DATA DIVISION.
         PROCEDURE DIVISION.
              PERFORM GET-DATA.
              PERFORM CALC_DATA.
@@ -368,9 +368,9 @@ context('This is a LSP spec', () => {
     beforeEach(() => {
       cy.writeFile(
         'test_files/project/CALC-DATA.cbl',
-        `       IDENTIFICATION DIVISION. 
-        PROGRAM-ID. VARS. 
-        DATA DIVISION. 
+        `       IDENTIFICATION DIVISION.
+        PROGRAM-ID. VARS.
+        DATA DIVISION.
         PROCEDURE DIVISION.
              PERFORM GET-DATA.
              PERFORM CALC_DATA.
@@ -626,7 +626,7 @@ context('This is a LSP spec', () => {
         DATA DIVISION.
         WORKING-STORAGE SECTION.
         01 RECORD-FILE-STATUS   PIC X(2).
-        
+
         PROCEDURE DIVISION.
             DISPLAY RECORD-FILE-STATUS.
             DISPLAY EIBCALEN.

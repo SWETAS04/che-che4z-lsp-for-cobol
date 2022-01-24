@@ -83,6 +83,8 @@ context('This is a Copybook spec', () => {
       ['smoke', 'CI'],
       'Checks that when opening Cobol file which recursively refers to copybooks, copybook is underlined with an error',
       () => {
+        cy.openFile('USERC1R.cbl').wait(500).closeCurrentTab();
+        // This is a workaround fo CI runs
         cy.openFile('USERC1R.cbl');
         cy.get(IDE.editorError)
           .should('have.length', 2)
@@ -158,6 +160,8 @@ context('This is a Copybook spec', () => {
       ['smoke', 'CI'],
       'Checks that Peek Definition functionality works in theia in cobol file via context menu',
       () => {
+        cy.openFile('USERC1N1.cbl').wait(3000).closeCurrentTab();
+        // This is a workaround fo CI runs
         cy.openFile('USERC1N1.cbl').wait(3000);
         cy.getLineByNumber(42).findText('User-Phone-Mobile.').goToDefinition();
         cy.getCurrentTab().should('contain.text', 'BOOK2N.cpy');
